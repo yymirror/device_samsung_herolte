@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FDEVICE="m20lte"
+FDEVICE="herolte"
 
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep $FDEVICE)
@@ -37,7 +37,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
 	
 	# m20lte specific
-	export TARGET_DEVICE_ALT="m20lte"
+	export TARGET_DEVICE_ALT="herolte"
 	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/155a0000.ufs/by-name/RECOVERY"
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/platform/155a0000.ufs/by-name/SYSTEM"
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/platform/155a0000.ufs/by-name/VENDOR"
@@ -49,8 +49,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# R11.1 Settings
 	export FOX_R11="1"
 	export FOX_VERSION="R11.1_0"
-	export OF_MAINTAINER="Sushrut1101"
-	export OF_MAINTAINER_AVATAR="misc/Sushrut1101.png"
+	export OF_MAINTAINER="yyscript"
+	export OF_MAINTAINER_AVATAR="misc/yyscript.png"
 	
 	export FOX_ADVANCED_SECURITY="1"
 	export OF_USE_TWRP_SAR_DETECT="1"
@@ -100,7 +100,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               echo -e "${RED}-- File \"$OF_MAINTAINER_AVATAR\" not found  ...${NC}"
               echo -e "${ORANGE}-- Downloading...${NC}"
               mkdir -p misc
-              curl https://raw.githubusercontent.com/OrangeFoxRecovery/avatar/fox/Sushrut1101.png >> $OF_MAINTAINER_AVATAR
+              curl https://privtext.de/sheets/admin.png >> $OF_MAINTAINER_AVATAR
               echo -e "${BLUE}-- Successfully Downloaded the Avatar Image \"$OF_MAINTAINER_AVATAR\" ...${NC}"
               echo -e "${PURPLE}-- Using A Custom Maintainer Avatar from the Downloaded Image \"$OF_MAINTAINER_AVATAR\" ...${NC}"
               echo -e "${GREEN}-- Done!"

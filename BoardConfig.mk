@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/hero2lte
+DEVICE_PATH := device/samsung/herolte
 
 # Architecture
 TARGET_ARCH := arm64
@@ -24,11 +24,11 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 
-TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH := arm64
 TARGET_2ND_ARCH_VARIANT := armv8-a
-TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI := armeabi-v8a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := exynos-m1
 
 # Kernel
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
@@ -38,14 +38,14 @@ BOARD_MKBOOTIMG_ARGS := \
 	--kernel_offset 0x00008000 \
 	--ramdisk_offset 0x01000000 \
 	--tags_offset 0x00000100 \
-	--dt $(DEVICE_PATH)/prebuilt/dt.img
+	--dt $(DEVICE_PATH)/prebuilt/dt-herolte.img
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := universal8890
 
 # Platform
-TARGET_BOARD_PLATFORM := exynos5
+TARGET_BOARD_PLATFORM := exynos8890
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -68,7 +68,7 @@ TW_THEME := portrait_hdpi
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/15400000.usb/15400000.dwc3/gadget/lun%d/file"
 TW_BRIGHTNESS_PATH := "/sys/devices/13900000.dsim/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 162
+TW_DEFAULT_BRIGHTNESS := 172
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone1/temp"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
